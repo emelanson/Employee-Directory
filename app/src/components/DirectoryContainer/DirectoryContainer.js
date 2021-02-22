@@ -5,7 +5,6 @@ class DirectoryContainer extends Component {
 
     state = { results: [] };
 
-
     componentDidMount() {
         this.employeeRetrieve();
     }
@@ -21,11 +20,10 @@ class DirectoryContainer extends Component {
     render() {
         return (
             <div style={{
-                position: 'absolute', left: '50%', top: '50%',
-                transform: 'translate(-50%, -50%)'
+                position: 'absolute', left: '10vw', top: '10%',
             }}
             >
-                <h1>ITS THE APP!</h1>
+                <h1>Employee Directory Table</h1>
                 <>
                     <ResultsTable results={this.state.results} />
                 </>

@@ -1,5 +1,4 @@
 import React from "react";
-import TableItem from "../TableItem/TableItem";
 
 function ResultsTable(props) {
     console.log("RESULTS TABLE PROPS", props);
