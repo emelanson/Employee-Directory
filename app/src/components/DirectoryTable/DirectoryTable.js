@@ -1,27 +1,20 @@
 import React, { Component } from 'react';
+import TableItem from "../TableItem/TableItem";
 
 class DirectoryTable extends Component {
 
 
-    render() {
+
+    render(props) {
+        console.log(props);
         return (
             <>
                 <table>
-                    <tr>
-                        <th>firstname</th>
-                        <th>Lastname</th>
-                        <th>Age</th>
-                    </tr>
-                    <tr>
-                        <td>Jill</td>
-                        <td>Smith</td>
-                        <td>50</td>
-                    </tr>
-                    <tr>
-                        <td>Eve</td>
-                        <td>Jackson</td>
-                        <td>94</td>
-                    </tr>
+                    {props.map((user, index) => {
+                        return (
+                            <TableItem user={user} key={index} />
+                        )
+                    })}
                 </table>
             </>
         );
