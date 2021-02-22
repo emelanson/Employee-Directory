@@ -2,23 +2,20 @@ import React, { Component } from 'react';
 import API from "../../utils/API";
 import TableItem from "../TableItem/TableItem";
 class DirectoryContainer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { results: [] };
-    }
+
+    state = { results: [] };
 
 
     componentDidMount() {
         this.employeeRetrieve();
-
-
     }
 
     employeeRetrieve() {
-        API.getUsers().then(res => {
-            this.setState({ results: res.data.results })
-            console.log(this.state)
-        });
+        API.getUsers()
+            .then(res => {
+                this.setState({ results: res.data.results })
+                console.log("=======RESPONSE:", res);
+            }).catch(err => console.log(err));
     }
 
     render() {
@@ -38,6 +35,7 @@ class DirectoryContainer extends Component {
                                 <th>Date of Birth</th>
                                 <th>Phone Number</th>
                             </tr>
+                            {/* <TableItem user={this.state} /> */}
                         </thead>
 
 

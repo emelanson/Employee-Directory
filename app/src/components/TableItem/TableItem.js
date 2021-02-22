@@ -1,15 +1,19 @@
-import { Component } from "react";
-class TableItem extends Component {
+import React from "react";
 
+function TableItem(props) {
+    console.log("PROPS", props)
 
-    render() {
-        return (
-            <div>
-                <tr>THIS IS A TABLE ROW</tr>
-            </div>
-        )
-    }
-};
+    const { name, dob, phone } = props.user;
+
+    return (
+        <tr>
+            <td>{name.first}</td>
+            <td>{name.last}</td>
+            <td>{dob}</td>
+            <td>{phone}</td>
+        </tr>
+    )
+}
 
 
 export default TableItem;
