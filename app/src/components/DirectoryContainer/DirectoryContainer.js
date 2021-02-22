@@ -12,19 +12,21 @@ class DirectoryContainer extends Component {
     employeeRetrieve() {
         API.getUsers()
             .then(res => {
-                this.setState({ results: res.data.results })
+                this.setState({ results: res.data.results, searchResults: res.data.results })
                 console.log("=======RESPONSE:", res);
             }).catch(err => console.log(err));
     }
 
-    handleSearch = e => {
+    handleSearch = async e => {
         const search = e.target.value;
 
-        let searchResults = this.state.results.filter((i) => {
+        //StackOverflow helped for this part.
+        let searchResults = await this.state.results.filter((i) => {
             let name = i.name.first.toLowerCase();
             return name.indexOf(search.toLowerCase()) !== -1;
         });
-        console.log(searchResults);
+
+        this.setState({ searchResults: searchResults });
     }
 
     render() {
@@ -39,7 +41,7 @@ class DirectoryContainer extends Component {
                     <input type="text" id="name" name="name" onChange={this.handleSearch} />
                 </form>
                 <>
-                    <ResultsTable results={this.state.results} />
+                    <ResultsTable results={this.state.searchResults} />
                 </>
             </div>
         );
