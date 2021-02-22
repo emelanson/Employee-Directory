@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
+import DirectoryTable from '../DirectoryTable/DirectoryTable';
 
 class DirectoryContainer extends Component {
     state = {
@@ -20,9 +21,14 @@ class DirectoryContainer extends Component {
 
     render() {
         return (
-            <>
+            <div style={{
+                position: 'absolute', left: '50%', top: '50%',
+                transform: 'translate(-50%, -50%)'
+            }}
+            >
                 <h1>ITS THE APP!</h1>
-            </>
+                <DirectoryTable />
+            </div>
         );
     }
 };
