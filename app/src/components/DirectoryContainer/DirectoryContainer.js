@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
-import TableItem from "../TableItem/TableItem";
+import ResultsTable from '../ResultsTable/ResultsTable';
 class DirectoryContainer extends Component {
 
     state = { results: [] };
@@ -27,22 +27,8 @@ class DirectoryContainer extends Component {
             >
                 <h1>ITS THE APP!</h1>
                 <>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Date of Birth</th>
-                                <th>Phone Number</th>
-                            </tr>
-                            {/* <TableItem user={this.state} /> */}
-                        </thead>
-
-
-
-                    </table>
+                    <ResultsTable results={this.state.results} />
                 </>
-                {/* <DirectoryTable props={this.state.results} /> */}
             </div>
         );
     }

@@ -1,16 +1,14 @@
 import React from "react";
 
 function TableItem(props) {
-    console.log("PROPS", props)
 
-    const { name, dob, phone } = props.user;
-
+    console.log("TABLE ITEM PROPS", props)
     return (
         <tr>
-            <td>{name.first}</td>
-            <td>{name.last}</td>
-            <td>{dob}</td>
-            <td>{phone}</td>
+            <td>{props.name.first}</td>
+            <td>{props.name.last}</td>
+            <td>{props.dob}</td>
+            <td>{props.phone}</td>
         </tr>
     )
 }
