@@ -3,7 +3,7 @@ import API from "../../utils/API";
 import ResultsTable from '../ResultsTable/ResultsTable';
 class DirectoryContainer extends Component {
 
-    state = { results: [], search: "", searchResults: [] };
+    state = { results: [], searchResults: [] };
 
     componentDidMount() {
         this.employeeRetrieve();
@@ -16,13 +16,15 @@ class DirectoryContainer extends Component {
                 console.log("=======RESPONSE:", res);
             }).catch(err => console.log(err));
     }
+
     handleSearch = e => {
-        this.setState({ search: e.target.value });
-        console.log(this.state.search);
-        // results.filter(function)
+        const search = e.target.value;
 
-
-        //temp results
+        let searchResults = this.state.results.filter((i) => {
+            let name = i.name.first.toLowerCase();
+            return name.indexOf(search.toLowerCase()) !== -1;
+        });
+        console.log(searchResults);
     }
 
     render() {
