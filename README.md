@@ -3,7 +3,7 @@
 
 ## Description
 
-<img src="./demo.gif"/>
+<img src="./demo1.gif"/>
 
 Employee directory is a react app that displays a list of user objects and is both searchable and sortable.
 
