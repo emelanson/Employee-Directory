@@ -20,9 +20,9 @@ Employee directory is a react app that displays a list of user objects and is bo
 
 ## Usage
 
-The site can either be downloaded and ran locally via ```NPM start```, or you can access the Heroku deployed version at the following URL.
+The site can either be downloaded and ran locally via ```NPM start```, or you can access the Github Pages deployed version at the following URL.
 
-https://calm-citadel-50486.herokuapp.com/ 
+https://emelanson.github.io/Employee-Directory/
 
 
 
